@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var regularDatePicker: UIDatePicker!
     @IBOutlet weak var field: UITextField!
     
     override func viewDidLoad() {
@@ -20,10 +20,10 @@ class ViewController: UIViewController {
 extension ViewController : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == field {
-            let datePicker = UIDatePicker()
-            datePicker.datePickerMode = .dateAndTime
-            datePicker.preferredDatePickerStyle = .wheels
-            field.inputView = datePicker
+            let datePickerAsInputView = UIDatePicker()
+            datePickerAsInputView.datePickerMode = .dateAndTime
+            datePickerAsInputView.preferredDatePickerStyle = .wheels
+            field.inputView = datePickerAsInputView
         }
     }
 }
